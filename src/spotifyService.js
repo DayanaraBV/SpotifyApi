@@ -1,4 +1,4 @@
-export const fetchClientToken = async () => {
+export const fetchClientToken = async () => { //Conexion con el servidor de API
     const response = await fetch('https://accounts.spotify.com/api/token', {
       method: 'POST',
       headers: {

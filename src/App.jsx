@@ -1,13 +1,13 @@
 import  { useState } from 'react';
-import {  searchSpotify } from './spotifyService'; // Asegúrate de separar tus funciones
+import {  searchSpotify } from './spotifyService'; 
 import './App.css';
 function App() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState({ albums: [], artists: [], tracks: [] });
   const [filter, setFilter] = useState('all');
-  const [playlist, setPlaylist] = useState([]); // Playlist
-  const [selectedItem, setSelectedItem] = useState(null); // Elemento seleccionado para el overlay
-  const [isOverlayVisible, setOverlayVisible] = useState(false); // Visibilidad del overlay
+  const [playlist, setPlaylist] = useState([]); 
+  const [selectedItem, setSelectedItem] = useState(null); 
+  const [isOverlayVisible, setOverlayVisible] = useState(false); 
 
   const handleSearch = async () => {
     try {
@@ -24,13 +24,13 @@ function App() {
   };
 
   const handleCardClick = (item) => {
-    setSelectedItem(item); // Guarda el elemento seleccionado
-    setOverlayVisible(true); // Muestra el overlay
+    setSelectedItem(item); 
+    setOverlayVisible(true); 
   };
 
   const closeOverlay = () => {
-    setSelectedItem(null); // Limpia el elemento seleccionado
-    setOverlayVisible(false); // Oculta el overlay
+    setSelectedItem(null); 
+    setOverlayVisible(false); 
   };
 
   const addToPlaylist = (track) => {
@@ -40,14 +40,14 @@ function App() {
   };
 
   const handleFilterChange = (type) => {
-    setFilter(type); // Cambiar el filtro según el botón presionado
+    setFilter(type); 
   };
 
   const filteredResults = () => {
     if (filter === 'albums') return results.albums;
     if (filter === 'artists') return results.artists;
     if (filter === 'tracks') return results.tracks;
-    return [...results.albums, ...results.artists, ...results.tracks]; // Todos los resultados
+    return [...results.albums, ...results.artists, ...results.tracks]; 
   };
 
   return (
@@ -122,7 +122,7 @@ function App() {
                     <button
                       className="add-to-playlist-button"
                       onClick={(e) => {
-                        e.stopPropagation(); // Evita que se abra el overlay al hacer clic en el botón
+                        e.stopPropagation(); 
                         addToPlaylist(item);
                       }}
                     >
