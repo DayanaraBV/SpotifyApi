@@ -232,7 +232,14 @@ h1 {
   color: #ffffff;
 }
 
-/* Playlist Styles */
+.add-to-playlist-button.added {
+  background-color: #d4d4d4; /* Gris claro */
+  color: #808080; /* Gris oscuro */
+  border: 2px solid #d4d4d4;
+  cursor: not-allowed;
+}
+
+
 /* Playlist Styles */
 .playlist-container {
   margin-top: 20px;
@@ -251,22 +258,6 @@ h1 {
 }
 #mensaje2{
   color:#5A3221;
-}
-.playlist {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.playlist-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  background-color: #fff5e1; /* Fondo blanco */
-  border: 4px solid #ffffff; /* Bordes blancos */
-  border-radius: 0; /* Pixelado */
-  padding: 10px;
-  box-shadow: 6px 6px 0 #f8c987; /* Sombra beige */
 }
 
 .playlist-image {
@@ -316,5 +307,96 @@ h1 {
 
 .filter-button:hover {
   background-color: #f65e26;
+  color: #ffffff;
+}
+
+.main-layout {
+  display: flex;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  overflow: hidden; /* Evita scroll no deseado */
+}
+
+.content-section {
+  flex: 3; /* Toma 3 partes del espacio disponible */
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.playlist-section {
+  flex: 1; /* Toma 1 parte del espacio disponible */
+  background-color: rgba(255, 232, 214, 0.9); /* Fondo translúcido beige */
+  border-left: 4px solid #ff6f3c; /* Línea divisoria */
+  padding: 20px;
+  overflow-y: auto; /* Habilita scroll en caso de overflow */
+}
+
+.playlist-section h2 {
+  color: #ff6f3c; /* Color del título */
+}
+
+.playlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.playlist-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #fff5e1;
+  border: 4px solid #ffffff;
+  padding: 10px;
+  box-shadow: 6px 6px 0 #f8c987;
+  position: relative; /* Necesario para posicionar el botón */
+}
+
+.remove-from-playlist-button {
+  background-color: #f65e26;
+  color: white;
+  border: 2px solid #f65e26;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  opacity: 0; /* Oculta el botón por defecto */
+  position: absolute; /* Coloca el botón en una posición fija dentro del elemento */
+  right: 10px; /* Ajusta la posición del botón */
+  top: 50%;
+  transform: translateY(-50%); /* Centra el botón verticalmente */
+  pointer-events: none; /* Evita clics cuando el botón está oculto */
+}
+
+.playlist-item:hover .remove-from-playlist-button {
+  opacity: 1; /* Muestra el botón al hacer hover */
+  pointer-events: auto; /* Habilita clics cuando el botón está visible */
+}
+
+.remove-from-playlist-button:hover {
+  background-color: #ff6f3c;
+  color: #ffffff;
+}
+
+.clear-button {
+  padding: 10px 20px;
+  background-color: #f4eeeb; /* Color naranja */
+  color: black;
+  border: 2px solid #ff6f3c;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.clear-button:hover {
+  background-color: #ff6f3c;
   color: #ffffff;
 }
