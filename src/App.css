@@ -108,6 +108,7 @@ h1 {
 /* Results Grid Styles */
 .results-container {
   margin-top: 20px;
+  width: 800px;
 }
 
 .results-grid {
@@ -272,13 +273,21 @@ h1 {
 .playlist-info h3 {
   margin: 0;
   font-size: 14px;
-  color: #f65e26; /* Naranja vibrante */
+  color: #f65e26;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 
 .playlist-info p {
   margin: 0;
   font-size: 12px;
   color: #2f2f2f; /* Texto oscuro */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  max-width: 150px;
 }
 /* Filter Buttons */
 /* Filter Buttons */
@@ -328,6 +337,7 @@ h1 {
   border-left: 4px solid #ff6f3c; /* Línea divisoria */
   padding: 20px;
   overflow-y: auto; /* Habilita scroll en caso de overflow */
+  width: 400px;
 }
 
 .playlist-section h2 {
